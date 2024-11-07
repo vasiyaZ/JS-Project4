@@ -1,0 +1,143 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background and Container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: linear-gradient(135deg, #ff6f91, #ff9671); */
+    background-image: url(https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    color: #ffffff;
+    /* font-family: "Kanit", sans-serif; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.timer-container {
+    text-align: center;
+    background: rgb(31 30 30 / 37%);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Header */
+.timer-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Event Display */
+#event-display {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    /* font-weight: bold;*/
+    font-family: "Kanit", sans-serif; 
+    font-weight: 300;
+}
+
+/* Input Fields */
+#event-name, #event-date {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Countdown Display */
+.countdown-display {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+.time-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-section span {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 0.7rem;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 85px;
+    text-align: center;
+}
+
+.time-section small {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-top: 0.3rem;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 1.5rem;
+}
+
+button {
+    padding: 0.7rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 0 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button#start {
+    background-color:#4e304af5 ;
+    color: #ffffff;
+}
+
+button#pause {
+    background-color: #896a72;
+    color: #333;
+}
+
+button#reset {
+    background-color: #f7d4d0eb;
+    color: #ffffff;
+}
+
+/* Button Hover and Active Styles */
+button:hover {
+    filter: brightness(0.9);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 500px) {
+    .time-section span {
+        font-size: 2rem;
+        width: 50px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
