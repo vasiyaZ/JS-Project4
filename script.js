@@ -61,16 +61,11 @@ function startCountdown() {
     isPaused = false;
 }
 
-function pauseCountdown() {
-    clearInterval(countdown);
-    isPaused = true;
+// function pauseCountdown() {
+//     clearInterval(countdown);
+//     isPaused = true;
 
-    // Pause the alarm sound if it's playing
-    // if (!alarmSound.paused) {
-    //     alarmSound.pause();
-    //     alarmSound.currentTime = 0;
-    // }
-}
+// }
 
 function resetCountdown() {
     clearInterval(countdown);
