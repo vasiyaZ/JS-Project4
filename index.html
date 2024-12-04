@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Countdown Timer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playwrite+AU+TAS:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rambla:ital@1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playwrite+AU+TAS:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rambla:ital@1&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="timer-container">
         <h1>Event Countdown Timer</h1>
-        <input type="text" id="event-name" placeholder="Enter Event Name" />
+        <input type="text" id="event-name" placeholder="Event Name (Eg: Birthday/Anniversary/Graduation Day)"
+            autocomplete="off" />
         <input type="datetime-local" id="event-date" />
         <div id="event-display" class="event-display">Your Event Countdown</div>
         <div class="countdown-display">
@@ -23,7 +28,6 @@
         </div>
         <div class="buttons">
             <button id="start">Start</button>
-            <button id="pause">Pause</button>
             <button id="reset">Reset</button>
         </div>
     </div>
@@ -33,4 +37,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

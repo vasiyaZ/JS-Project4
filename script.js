@@ -6,7 +6,6 @@ const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 const startBtn = document.getElementById("start");
-const pauseBtn = document.getElementById("pause");
 const resetBtn = document.getElementById("reset");
 const alarmSound = document.getElementById("alarm-sound");
 
@@ -28,7 +27,7 @@ function updateCountdown() {
         minutesEl.textContent = "00";
         secondsEl.textContent = "00";
         eventDisplay.textContent = `${eventNameInput.value} has started!`;
-        
+
         return;
     }
 
@@ -43,28 +42,34 @@ function updateCountdown() {
     secondsEl.textContent = seconds < 10 ? `0${seconds}` : seconds;
 }
 
+
 function startCountdown() {
-    if (!eventDateInput.value ) {
-        alert("Please enter both an event name and a date!");
+    const now = new Date();
+    const eventDate = new Date(eventDateInput.value);
+    if (eventDate <= now) {
+        alert("Please select a future date!");
+        return;
+    }
+    if (!eventDateInput.value || !eventNameInput.value) {
+        alert("Please enter both: an event name and a date!");
         return;
     }
 
     eventDisplay.textContent = `Countdown to ${eventNameInput.value}`;
-    if (isPaused) {
-        isPaused = false;
-    } else {
-        countdown = setInterval(updateCountdown, 1000);
-    }
+    clearInterval(countdown); // Prevent duplicate intervals
+    countdown = setInterval(updateCountdown, 1000);
+    isPaused = false;
 }
 
 function pauseCountdown() {
     clearInterval(countdown);
     isPaused = true;
-    
+
     // Pause the alarm sound if it's playing
-    if (!alarmSound.paused) {
-        alarmSound.pause();
-    }
+    // if (!alarmSound.paused) {
+    //     alarmSound.pause();
+    //     alarmSound.currentTime = 0;
+    // }
 }
 
 function resetCountdown() {
@@ -75,14 +80,15 @@ function resetCountdown() {
     secondsEl.textContent = "00";
     eventDateInput.value = "";
     eventNameInput.value = "";
-    eventDisplay.textContent = "Your Event Countdown";
+    eventDisplay.textContent = "Countdown reset!";
     isPaused = false;
-    
+
     // Stop and reset the alarm sound
-    alarmSound.pause();
-    alarmSound.currentTime = 0;  // Reset sound position
+    if (!alarmSound.paused) {
+        alarmSound.pause();
+        alarmSound.currentTime = 0;  // Reset sound position
+    }
 }
 
 startBtn.addEventListener("click", startCountdown);
-pauseBtn.addEventListener("click", pauseCountdown);
 resetBtn.addEventListener("click", resetCountdown);
